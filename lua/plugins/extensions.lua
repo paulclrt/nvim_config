@@ -104,7 +104,25 @@ return {
   {
     "sindrets/diffview.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      local diffview = require("diffview")
+      vim.keymap.set("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", { desc = "Git diff" })
+      vim.keymap.set("n", "<leader>gD", "<cmd>DiffviewClose<CR>", { desc = "Close diffview" })
+      vim.keymap.set("n", "<leader>gf", "<cmd>DiffviewToggleFiles<CR>", { desc = "Toggle file panel" })
+    end,
+  },
 
+  {
+    "rbong/vim-flog",
+    lazy = false,
+    cmd = { "Flog" },
+    dependencies = {
+      "tpope/vim-fugitive",
+    },
+    config = function()
+      require("lazy").load({ plugins = { "vim-flog" } })
+      vim.keymap.set("n", "<leader>gj", "<cmd>Flog<CR>", { desc = "Flog - git tree viewer" })
+    end,
   },
 
 }
