@@ -37,3 +37,14 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize -2<CR>', opts)
 
 -- toogle zoom on window
 vim.keymap.set('n', '<leader>z', ':Maximize<CR>', { silent = true })
+
+
+-- horizontal split
+vim.keymap.set('n', '<leader>sh', ':split<CR>', { silent = true })
+-- vertical split
+vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { silent = true })
+vim.keymap.set('n', '<leader>q', ':bd<CR>', { silent = true })
+vim.keymap.set("n", "<A-h>", "<cmd>vertical resize -2<CR>", { silent = true })
+vim.keymap.set("n", "<A-l>", "<cmd>vertical resize +2<CR>", { silent = true })
+vim.keymap.set("n", "<A-j>", "<cmd>resize -2<CR>", { silent = true })
+vim.keymap.set("n", "<A-k>", "<cmd>resize +2<CR>", { silent = true })
