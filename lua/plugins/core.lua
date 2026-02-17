@@ -7,7 +7,10 @@ return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.2",
     dependencies = { "nvim-lua/plenary.nvim" },
-    config = function() require("config.telescope") end
+    config = function()
+      local telescope = require("telescope.builtin")
+      vim.keymap.set("n", "<leader>ci", telescope.lsp_incoming_calls, { desc = "LSP incoming calls" })
+    end
   },
   { 
     "theprimeagen/harpoon",
